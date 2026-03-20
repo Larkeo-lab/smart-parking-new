@@ -37,9 +37,7 @@ export const useMqtt = (mallId) => {
       }
 
       if (topic === MQTT_TOPICS.GATE_STATUS) {
-        setMqttData((prev) =>
-          prev ? { ...prev, gateStatus: payload } : null,
-        );
+        setMqttData((prev) => (prev ? { ...prev, gateStatus: payload } : null));
       }
 
       if (topic === MQTT_TOPICS.BOARD_STATUS) {

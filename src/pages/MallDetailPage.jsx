@@ -207,7 +207,7 @@ export default function MallDetailPage() {
               <div className="space-y-2 text-center md:text-left">
                 <div className="flex items-center gap-3 justify-center md:justify-start">
                   <h3 className="text-2xl font-bold font-['Bai_Jamjuree']">
-                    ຄວບຄຸ່ມປະຕູ (ຈຸດຈອດ {activeReservation.spotId})
+                    ຄວບຄຸມປະຕູ (ຈຸດຈອດ {activeReservation.spotId})
                   </h3>
                   <Button
                     className="h-14 px-8 rounded-2xl font-bold text-lg transition-all bg-red-600/20 hover:bg-red-600 text-white border border-red-500/50 shadow-[0_0_20px_rgba(239,68,68,0.2)]"
@@ -221,10 +221,10 @@ export default function MallDetailPage() {
                   <span
                     className={clsx(
                       "font-bold",
-                      isGateOpen ? "text-green-400" : "text-red-400",
+                      isGateOpen ? "text-red-400" : "text-green-400",
                     )}
                   >
-                    {isGateOpen ? "ເປີດຢູ່" : "ປິດຢູ່"}
+                    {isGateOpen ? " ປິດ" : " ເປີດ"}
                   </span>
                 </p>
               </div>
@@ -232,24 +232,24 @@ export default function MallDetailPage() {
                 <Button
                   className={clsx(
                     "flex-1 md:flex-none h-14 px-8 rounded-2xl font-bold text-lg transition-all",
-                    isGateOpen
+                    !isGateOpen
                       ? "bg-white/10 text-white/40 cursor-not-allowed"
                       : "bg-green-500 hover:bg-green-600 text-white shadow-[0_0_20px_rgba(34,197,94,0.3)]",
                   )}
-                  disabled={isGateOpen}
-                  onClick={() => handleGateControl(true)}
+                  disabled={!isGateOpen}
+                  onClick={() => handleGateControl(false)}
                 >
                   ເປີດປະຕູ
                 </Button>
                 <Button
                   className={clsx(
                     "flex-1 md:flex-none h-14 px-8 rounded-2xl font-bold text-lg transition-all",
-                    !isGateOpen
+                    isGateOpen
                       ? "bg-white/10 text-white/40 cursor-not-allowed"
                       : "bg-red-500 hover:bg-red-600 text-white shadow-[0_0_20px_rgba(239,68,68,0.3)]",
                   )}
-                  disabled={!isGateOpen}
-                  onClick={() => handleGateControl(false)}
+                  disabled={isGateOpen}
+                  onClick={() => handleGateControl(true)}
                 >
                   ປິດປະຕູ
                 </Button>

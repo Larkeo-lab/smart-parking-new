@@ -53,13 +53,13 @@ export const NavigationHeader = () => {
           as={Link}
           to="/"
           className={clsx(
-            "px-8 h-12 text-lg font-semibold rounded-xl transition-all",
+            "px-8 h-12 text-lg font-semibold rounded-xl transition-all flex justify-center items-center",
             pathname === "/"
               ? "bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-[0_5px_20px_rgba(0,102,255,0.4)]"
               : "bg-white/5 border border-white/10 text-white/60 hover:border-blue-500",
           )}
         >
-          🏠 ຫນ້າຫຼັກ
+          🏠 ໜ້າຫຼັກ
         </Button>
 
         {user ? (
