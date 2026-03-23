@@ -7,7 +7,7 @@ export const initialMalls = [
   {
     id: "my-project",
     image: my,
-    name: "My Project",
+    name: "IoT final Group2 PJ",
     icon: "🏠",
     totalSpots: Object.keys(initialMqttData).filter(
       (key) => key.includes("spot") || key.includes("Spot"),
