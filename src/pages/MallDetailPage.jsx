@@ -231,29 +231,40 @@ export default function MallDetailPage() {
               <div className="flex gap-4 w-full md:w-auto">
                 <Button
                   className={clsx(
-                    "flex-1 md:flex-none h-14 px-8 rounded-2xl font-bold text-lg transition-all",
-                    !isGateOpen
-                      ? "bg-white/10 text-white/40 cursor-not-allowed"
-                      : "bg-green-500 hover:bg-green-600 text-white shadow-[0_0_20px_rgba(34,197,94,0.3)]",
+                    "flex-1 md:flex-none h-16 px-10 rounded-2xl font-bold text-lg transition-all transform active:scale-95 duration-300",
+                    isGateOpen
+                      ? "bg-white/5 text-white/20 border border-white/5 cursor-not-allowed"
+                      : "bg-gradient-to-r from-emerald-500 to-green-600 text-white shadow-[0_10px_30px_rgba(16,185,129,0.3)] hover:translate-y-[-2px] hover:shadow-[0_15px_40px_rgba(16,185,129,0.4)]",
                   )}
-                  disabled={!isGateOpen}
+                  disabled={isGateOpen}
                   onClick={() => handleGateControl(true)}
                 >
-                  ເປີດປະຕູ
+                  <div className="flex items-center gap-3">
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z" />
+                    </svg>
+                    ເປີດປະຕູ
+                  </div>
                 </Button>
                 <Button
                   className={clsx(
-                    "flex-1 md:flex-none h-14 px-8 rounded-2xl font-bold text-lg transition-all",
-                    isGateOpen
-                      ? "bg-white/10 text-white/40 cursor-not-allowed"
-                      : "bg-red-500 hover:bg-red-600 text-white shadow-[0_0_20_rgba(239,68,68,0.3)]",
+                    "flex-1 md:flex-none h-16 px-10 rounded-2xl font-bold text-lg transition-all transform active:scale-95 duration-300",
+                    !isGateOpen
+                      ? "bg-white/5 text-white/20 border border-white/5 cursor-not-allowed"
+                      : "bg-gradient-to-r from-rose-500 to-red-600 text-white shadow-[0_10px_30px_rgba(244,63,94,0.3)] hover:translate-y-[-2px] hover:shadow-[0_15px_40px_rgba(244,63,94,0.4)]",
                   )}
-                  disabled={isGateOpen}
+                  disabled={!isGateOpen}
                   onClick={() => handleGateControl(false)}
                 >
-                  ປິດປະຕູ
+                  <div className="flex items-center gap-3">
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                    ປິດປະຕູ
+                  </div>
                 </Button>
               </div>
+
 
             </div>
           </CardBody>
